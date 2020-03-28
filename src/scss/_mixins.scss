@@ -1,0 +1,24 @@
+@mixin tdn() {
+	text-decoration: none;
+}
+
+@mixin tr($prop) {
+	transition: $prop .3s ease-in;
+}
+
+@mixin hover() {
+	@include tr(all);
+	&:hover,
+	&:focus,
+	&:active,
+	&--active {
+		@content;
+	}
+}
+
+@mixin posCenter {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
